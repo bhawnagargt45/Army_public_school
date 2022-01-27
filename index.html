@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/alpinejs" defer></script>
+</head>
+
+<body class="bg-gray-200">
+    <div class="bg-white min-h-screen container mx-auto shadow-xl" x-data="data()">
+        <!-- Nav bar -->
+        <div class="md:hidden text-white p-4 flex justify-end" :class="`bg-${themeColor}-500`">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div :class="`bg-${themeColor}-500`" class="hidden md:block text-white text-center p-4 space-x-6 md:space-x-12 md:text-xl">
+            <a href="index.html" class=" hover:text-red-700 bg-black-500 text-red-700 ">Home</a>
+            <a href="about.html" class=" hover:text-red-700">About me</a>
+            <a href="blog.html" class=" hover:text-red-700">Blog</a>
+            <a href="contact.html" class=" hover:text-red-700">Get in touch</a>
+        </div>
+        <!-- Hero -->
+        <div class="">
+            <img src="images/img1.jpg" alt="" class="h-64 w-full object-cover">
+        </div>
+        <!-- Portfolio -->
+        <div class="flex justify-between mt-24 px-4 md:px-16">
+
+            <div class="text-xl md:text-3xl font-bold text-center">How will india be in 2050</div>
+            <a href="blog.html" :class="`text-${themeColor}-500`" class="md:text-xl">See all</a>
+        </div>
+        <div class="bg-white-500 ">
+            <img src="images/image.jpg" class="  w-3/4   rounded-lg pl-56 pt-12" alt="">
+            <h1 class="text-lg font-bold pl-56">In 2050 our country would be celebration 103 day of indeendence from cruel British Raj</h1>
+            <p class="font-light w-3/4 pl-56">Independence Day is a festival of freedom for us. This was made possible by generations of freedom fighters; some known, many unknown. They made great sacrifices. Today, you and I breathe under free skies thanks to their heroic deeds. I bowin
+                respect to the pious memory of those brave martyrs. Our nation, like many others, suffered great injustices and tyranny under foreign rule. What distinguishes India, however, is that the character of our nationalist movement, led by Mahatma
+                Gandhi, was based on the principles of truth and non-violence. ....<a href="blog.html" class="text-blue-500">Read More</a></p>
+
+        </div>
+        <div class="absolute right-0 top-0 flex flex-col items-center justify-between w-16 p-4 h-96">
+            <template x-for="themeColorOption in themeColorOptions">
+                <div @click="themeColor = themeColorOption" class="h-8 w-8 rounded-full cursor-pointer" :class="`bg-${themeColorOption}-500`"></div>
+            </template>
+        </div>
+        <!-- Footer -->
+        <div class="p-6 md:p-16 text-center">&copy; 2022 APSDK</div>
+    </div>
+    <script>
+        function data() {
+            return {
+                themeColor: "purple",
+                themeColorOptions: [
+                    "blue",
+                    "pink",
+                    "purple",
+                    "red",
+                    "indigo",
+                    "green"
+                ],
+            };
+        }
+    </script>
+</body>
+
+</html>

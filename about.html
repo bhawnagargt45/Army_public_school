@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/alpinejs" defer></script>
+</head>
+
+<body class="bg-gray-200">
+    <div class="bg-white min-h-screen container mx-auto shadow-xl" x-data="data()">
+        <!-- Nav bar -->
+        <div class="bg-purple-500 text-white text-center p-4 space-x-6 md:space-x-12 md:text-xl">
+            <a href="index.html" class=" hover:underline">Home</a>
+            <a href="about.html" class=" hover:underline underline">About me</a>
+            <a href="blog.html" class=" hover:underline">Blog</a>
+            <a href="contact.html" class=" hover:underline">Get in touch</a>
+        </div>
+        <!-- Hero -->
+        <div class="">
+            <img src="https://images.unsplash.com/photo-1627896248725-0a4171d10d4d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80" alt="" class="h-64 w-full object-cover">
+        </div>
+        <!-- Big Intro -->
+        <div class="flex flex-col md:flex-row items-center justify-between bg-white p-4 md:p-16 shadow-xl mt-2">
+            <img src="images/me.jpg" alt="" class="h-32 w-32 rounded-full">
+
+            <div class="p-8 italic text-xl">
+                <div class="text-4xl">"</div>
+                <div class="ml-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit officia nam cupiditate consectetur, rem iste ad ipsam aspernatur a maxime eum omnis, nihil facilis, quAlpine JSatem tempore laudantium architecto eligendi.</div>
+                <div class="text-4xl text-right">"</div>
+                <div class="text-xl font-bold text-right mt-4">- Aditya Raj</div>
+            </div>
+        </div>
+        <!-- Skill showcase -->
+        <div class="flex justify-center mt-12 p-4 md:px-16 ">
+            <div class="text-2xl md:text-5xl md:font-thin">My skills</div>
+        </div>
+        <div class="px-4 md:px-12 mt-6">
+            <template x-for="skill in skills">
+                <div class="p-4 flex flex-col md:flex-row justify-center items-center">
+                    <div class="md:w-32" x-text="skill.title"></div>
+                    <div class="w-full md:w-1/2 h-6 bg-gray-200 rounded-full mt-2 md:mt-0">
+                        <div :class="`w-${skill.level}/12`" class="h-6 bg-gradient-to-r from-blue-500 to-green-500 rounded-full"></div>
+                    </div>
+                </div>
+            </template>
+        </div>
+        <!-- Footer -->
+        <div class="p-6 md:p-16 text-center">&copy; 2022 APSDK</div>
+    </div>
+    <script>
+        function data() {
+            return {
+                skills: [{
+                    title: "HTML",
+                    level: 8
+                }, {
+                    title: "Tailwind CSS",
+                    level: 7
+                }, {
+                    title: "Alpine JS",
+                    level: 6
+                }, {
+                    title: "DART/Flutter",
+                    level: 6
+                }, {
+                    title: "Unity",
+                    level: 4
+                }, ],
+            };
+        }
+    </script>
+</body>
+
+</html>

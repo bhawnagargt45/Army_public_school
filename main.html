@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/alpinejs" defer></script>
+</head>
+
+<body x-data="data()">
+    <!--Nav Bar-->
+    <nav :class="`bg-${themeColor}-500`" class="p-4 rounded-3xl">
+        <h1 style="font-family: fantasy;" class="text-4xl font-bold">Aditya</h1>
+        <p>Portfolio</p>
+
+    </nav>
+
+    <!--Theme changer &copy Abhilash Purohit-->
+    <div class="absolute right-0 top-0 flex flex-col items-center justify-between w-16 p-4 h-96">
+        <template x-for="themeColorOption in themeColorOptions">
+            <div @click="themeColor = themeColorOption" class="h-8 w-8 rounded-full cursor-pointer" :class="`bg-${themeColorOption}-500`"></div>
+        </template>
+    </div>
+    <script>
+        function data() {
+            return {
+                themeColor: "purple",
+                themeColorOptions: [
+                    "blue",
+                    "pink",
+                    "purple",
+                    "red",
+                    "indigo",
+                    "green"
+                ],
+            };
+        }
+    </script>
+</body>
+
+</html>
